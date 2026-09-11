@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  --shell: #eaeaea;
+  --panel: #ffffff;
+  --panel-2: #faf9f8;
+  --panel-3: #f3f2f1;
+  --border: #e1dfdd;
+  --border-2: #d2d0ce;
+  --text: #1b1b1b;
+  --text-2: #605e5c;
+  --accent: #0078d4;
+  --accent-hover: #106ebe;
+  --accent-fg: #ffffff;
+  --hover: #f3f2f1;
+  --selected: #d0e7f8;
+  --header: #1b1a19;
+  --header-2: #252423;
+  --header-text: #ffffff;
+  --ok: #107c10;
+  --warn: #797673;
+  --err: #a4262c;
+  --shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.11), 0 0.3px 0.9px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --shell: #101010;
+  --panel: #1b1a19;
+  --panel-2: #21201f;
+  --panel-3: #252423;
+  --border: #323130;
+  --border-2: #3b3a39;
+  --text: #f3f2f1;
+  --text-2: #a19f9d;
+  --accent: #4da3f5;
+  --accent-hover: #6cb8ff;
+  --accent-fg: #0b0b0b;
+  --hover: #252423;
+  --selected: #113b5c;
+  --header: #101010;
+  --header-2: #1b1a19;
+  --ok: #6ccb5f;
+  --warn: #c8a979;
+  --err: #f07c7c;
+  --shadow: 0 1.6px 3.6px rgba(0, 0, 0, 0.4), 0 0.3px 0.9px rgba(0, 0, 0, 0.3);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--shell);
+  color: var(--text);
+  font-family: "Segoe UI", -apple-system, "Segoe UI Web (West European)", system-ui, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: "Cascadia Mono", "SF Mono", Menlo, Consolas, "Courier New", monospace;
+}
+
+.az-scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.az-scroll::-webkit-scrollbar-thumb {
+  background: var(--border-2);
+  border-radius: 6px;
+}
+.az-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--text-2);
+}
+.az-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes bladeIn {
+  from {
+    opacity: 0.4;
+    transform: translateX(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.blade-in {
+  animation: bladeIn 0.18s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fadeIn 0.16s ease-out;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.toast-in {
+  animation: toastIn 0.2s ease-out;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 1.1s linear infinite;
+}
+
+input,
+select,
+button,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
